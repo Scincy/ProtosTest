@@ -19,6 +19,7 @@ public class CharactorContorller : MonoBehaviour
 	private int randomKey;
 	private int randomKeyAction;
 	private const int MAX_KEY_ACTION_COUNT= 3;
+	private bool isGround = true;
 
 	private Rigidbody2D charactorBody;
 
@@ -156,4 +157,19 @@ public class CharactorContorller : MonoBehaviour
 
 		//TODO photon으로 중복된 Action이 없는지 확인이 필요
 	}
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.tag=="Platform")
+        {
+			isGround = true;
+        }
+    }
+	private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag=="Platform")
+        {
+			isGround = false;
+        }
+    }
 }
