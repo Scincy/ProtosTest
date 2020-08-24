@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class ServerConnect : MonoBehaviour
+public class ServerConnect : MonoBehaviourPunCallbacks
 {
     private string UUID = "";
 
@@ -60,4 +63,44 @@ public class ServerConnect : MonoBehaviour
     {
         UUID = null;
     }
+
+    public void Connect()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+    #region MonoBehaviourPunCallbacks Callbacks
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinRandomRoom(null, 0);
+        Debug.Log("Master!");
+    }
+
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Debug.Log("Joined Room Failed!");
+        Debug.Log(message);
+        PhotonNetwork.CreateRoom(null);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joined Room!");
+        if (PhotonNetwork.CountOfPlayersInRooms == 3)
+        {
+            SceneManager.LoadScene("GameScene_1");
+        }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log("Joined Player Entered Room!");
+        if (PhotonNetwork.CountOfPlayersInRooms == 3)
+        {
+            SceneManager.LoadScene("GameScene_1");
+        }
+    }
+
+    #endregion
 }

@@ -16,15 +16,15 @@ public class CharactorContorller : MonoBehaviour
 
 	public bool isMapDebugMode = false;
 
-	private int randomKey;
-	private int randomKeyAction;
-	private const int MAX_KEY_ACTION_COUNT= 3;
+	//private int randomKey;
+	//private int randomKeyAction;
+	//private const int MAX_KEY_ACTION_COUNT= 3;
 	private bool isGround = true;
 
 	private Rigidbody2D charactorBody;
 
-	protected private string[] keyboard = { "q", "w", "e", "r", "a", "s", "d", "f" };
-	protected private string[] actions  = { "right", "left", "jump", "down" };
+	//protected private string[] keyboard = { "q", "w", "e", "r", "a", "s", "d", "f" };
+	//protected private string[] actions  = { "right", "left", "jump", "down" };
 
 
 	void Start()
@@ -32,27 +32,26 @@ public class CharactorContorller : MonoBehaviour
 		charactorBody = GetComponent<Rigidbody2D>();
 
 		// Init - Random direction and key number
-		SetRandomKeySelection();
-		SetRandomAction();
+		//SetRandomKeySelection();
+		//SetRandomAction();
 
-		Debug.Log(actions[randomKeyAction] + " is On " + keyboard[randomKey]);
+		//Debug.Log(actions[randomKeyAction] + " is On " + keyboard[randomKey]);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		// 이 부분의 조건문을 죽었을 때로 바꾸면 새롭게 키를 배정할 수 있습니다.
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
 			SetRandomKeySelection();
 			SetRandomAction();
-			Debug.Log(actions[randomKeyAction] + " is On " + keyboard[randomKey]);
-		}
+			//Debug.Log(actions[randomKeyAction] + " is On " + keyboard[randomKey]);
+		}*/
 		if (isMapDebugMode)
 		{
 			Move();
 		}
-		else Move(keyboard[randomKey], actions[randomKeyAction]); 
 	}
 
 	/// <summary>
@@ -60,39 +59,39 @@ public class CharactorContorller : MonoBehaviour
 	/// </summary>
 	/// <param name="keySelection">선택된 키입니다.</param>
 	/// <param name="keyAction">입력 받은 키가 수행할 활동입니다.</param>
-	void Move(string keySelection,string keyAction)
+	public void Move(bool key, bool keyUp, bool keyDown, string keyAction)
 	{
         switch (keyAction)
         {
 			case "right":
 				// Right Move
-				if (Input.GetKey(keySelection))
+				if (key)
 				{
 					charactorBody.AddForce(new Vector2(moveSpeed, 0));
 				}
-				else if (Input.GetKeyUp(keySelection))
+				else if (keyUp)
 				{
 					charactorBody.velocity = Vector2.zero;
 				}
 				break;
 			case "left":
 				// Left Move
-				if (Input.GetKey(keySelection))
+				if (key)
 				{
 					charactorBody.AddForce(new Vector2(-moveSpeed, 0));
 				}
-				else if (Input.GetKeyUp(keySelection))
+				else if (keyUp)
 				{
 					charactorBody.velocity = Vector2.zero;
 				}
 				break;
 			case "jump":
 				// JUMP
-				if (Input.GetKeyDown(keySelection))
+				if (keyDown)
 				{
 					charactorBody.AddForce(new Vector2(0, jumpForce));
 				}
-				else if (Input.GetKeyUp(keySelection) && charactorBody.velocity.y > 0)
+				else if (keyUp && charactorBody.velocity.y > 0)
 				{   // 점프 키에서 손을 때고, 현재 점프중이라면 점프 이동 속도 절반 감소
 					charactorBody.velocity = charactorBody.velocity * 0.5f;
 				}
@@ -136,27 +135,20 @@ public class CharactorContorller : MonoBehaviour
 			charactorBody.velocity = charactorBody.velocity * 0.5f;
 		}
 	}
-
-
-
-
-
-
-	void SetRandomKeySelection()
+    
+	/*void SetRandomKeySelection()
     {
 		randomKey = Random.Range(0, keyboard.Length);
 		selectedKeyUI.sprite = keyUI[randomKey];
-	}
-
-
-
-	void SetRandomAction()
+	}*/
+    
+	/*void SetRandomAction()
     {
 		randomKeyAction = Random.Range(0, MAX_KEY_ACTION_COUNT);
 		selectedActionUI.sprite = actionUI[randomKeyAction];
 
 		//TODO photon으로 중복된 Action이 없는지 확인이 필요
-	}
+	}*/
 
     private void OnCollisionStay2D(Collision2D collision)
     {
