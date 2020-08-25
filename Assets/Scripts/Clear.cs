@@ -28,7 +28,7 @@ public class Clear : MonoBehaviour
         }
         if (isFinalStage)
         {
-            dialogManager.ShowRegenDialog("마지막스테이지 클리어하셨습니다! 게임을 종료해주세요!");
+            dialogManager.ShowLobbyDialog("마지막 스테이지를 클리어하셨습니다!");
         }
     }
 }
