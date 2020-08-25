@@ -2,19 +2,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
+using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Text serverText;
+    public Button startButton;
+    public InputField nicknameField;
+
+    public void SetUIActive(bool v)
     {
+        startButton.interactable = v;
+        nicknameField.interactable = v;
     }
 
-    // Update is called once per frame
-    void Update()
+    public string GetNickname()
     {
-        
+        return nicknameField.text;
+    }
+
+    public void Log(string line)
+    {
+        serverText.text += "\n" + line;
+    }
+
+    public void Connect()
+    {
+        GetComponent<ServerConnect>().Connect();
     }
 
     public void QuitGame()

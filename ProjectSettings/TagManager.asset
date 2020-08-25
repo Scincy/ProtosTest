@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Platform
+  - RegenPoint
+  - PlayerController
+  - DialogManager
   layers:
   - Default
   - TransparentFX

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Killer : MonoBehaviour
 {
-    public bool needDestroy = false;
-    public Transform regenPoint;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +19,7 @@ public class Killer : MonoBehaviour
         
         if (collision.tag=="Player")
         {
-            Debug.Log("DIE!!!!!");
-            if (needDestroy)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                collision.gameObject.transform.position = regenPoint.position;
-            }
+            collision.GetComponent<CharactorContorller>().Kill();
         }
     }
 }
