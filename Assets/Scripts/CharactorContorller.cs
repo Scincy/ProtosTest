@@ -158,7 +158,6 @@ public class CharactorContorller : MonoBehaviour, IPunObservable
         idToAction = dict;
         PlayerController player = GameObject.Find("PlayerController").GetComponent<PlayerController>();
         player.SetAction(idToAction[PhotonNetwork.LocalPlayer.ActorNumber]);
-        player.SetRandomKeySelection();
     }
 
     public string GetAction(int id)

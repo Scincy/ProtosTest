@@ -11,15 +11,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     CharactorContorller charactor;
     public GameObject playerPrefab;
     
-    public Image selectedKeyUI;
     public Image selectedActionUI;
-    public Sprite[] keyUI;
     public string[] actions;
     public Sprite[] actionUI;
     protected Dictionary<string, Sprite> actionUIDict;
-    protected private string[] keyboard = { "q", "w", "e", "r", "a", "s", "d", "f" };
-    protected private KeyCode[] keycodes = { KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.R, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.F };
-    protected private KeyCode keycode;
 
     private void Awake()
     {
@@ -50,20 +45,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                charactor.SetKey(PhotonNetwork.LocalPlayer.ActorNumber, Input.GetKey(keycode));
+                charactor.SetKey(PhotonNetwork.LocalPlayer.ActorNumber, Input.GetKey(KeyCode.Space));
             }
             else
             {
-                PhotonView.Get(charactor).RPC("SetKey", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer.ActorNumber, Input.GetKey(keycode));
+                PhotonView.Get(charactor).RPC("SetKey", RpcTarget.MasterClient, PhotonNetwork.LocalPlayer.ActorNumber, Input.GetKey(KeyCode.Space));
             }
         }
-    }
-
-    public void SetRandomKeySelection()
-    {
-        int randomKey = Random.Range(0, keyboard.Length);
-        selectedKeyUI.sprite = keyUI[randomKey];
-        keycode = keycodes[randomKey];
     }
 
     public void SetAction(string action)
