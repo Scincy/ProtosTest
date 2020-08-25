@@ -210,7 +210,7 @@ public class CharactorContorller : MonoBehaviour, IPunObservable
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         transform.position = regenPoint;
-        ShuffleIdToAction();
+        //ShuffleIdToAction();
     }
 
     /*private void OnCollisionStay2D(Collision2D collision)
