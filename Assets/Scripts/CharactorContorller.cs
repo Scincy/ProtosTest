@@ -166,6 +166,11 @@ public class CharactorContorller : MonoBehaviour, IPunObservable
         return idToAction[id];
     }
 
+    public void ChangeRegenPoint(Vector3 p)
+    {
+        regenPoint = p;
+    }
+
 	/// <summary>
 	/// 맵을 정상적으로 이동할 수 있는지 여부를 확인할 용도로 남겨 두었습니다.
 	/// </summary>
