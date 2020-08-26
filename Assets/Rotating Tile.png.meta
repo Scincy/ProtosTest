@@ -1,49 +1,19 @@
 fileFormatVersion: 2
-guid: 0304ca27eda058e448f6fc16b2ceff48
+guid: aa832db82348bf04b92a39a38c818f82
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2760883547455663301
-    second: char_move_0
+      213: -5500295786447783190
+    second: Rotating Tile_0
   - first:
-      213: -6375898667199885618
-    second: char_move_1
+      213: 8923574077967181736
+    second: Rotating Tile_1
   - first:
-      213: 4756601630712855412
-    second: char_move_2
+      213: 588502585606436949
+    second: Rotating Tile_2
   - first:
-      213: -8012909855183200945
-    second: char_move_3
-  - first:
-      213: -144517853922937236
-    second: char_move_4
-  - first:
-      213: -3225616014811237856
-    second: char_move_5
-  - first:
-      213: -6598889077684410720
-    second: char_move_6
-  - first:
-      213: -2599795977250609413
-    second: char_move_0
-  - first:
-      213: 8901445533192213324
-    second: char_move_1
-  - first:
-      213: -383287953922100773
-    second: char_move_2
-  - first:
-      213: -8369230403592460810
-    second: char_move_3
-  - first:
-      213: -2185516354557831682
-    second: char_move_4
-  - first:
-      213: 5491190558487788985
-    second: char_move_5
-  - first:
-      213: 8131111684558172935
-    second: char_move_6
+      213: -3044846935259436499
+    second: Rotating Tile_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -73,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -87,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +73,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -115,7 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -129,13 +99,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_move_0
+      name: Rotating Tile_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeab331cf160ba3b0800000000000000
+      internalID: -5500295786447783190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rotating Tile_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a72e144857e6db70800000000000000
+      internalID: 8923574077967181736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rotating Tile_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf6ec7f355babebd0800000000000000
-      internalID: -2599795977250609413
+      spriteID: 558787ccbf7ca2800800000000000000
+      internalID: 588502585606436949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_move_1
+      name: Rotating Tile_3
       rect:
         serializedVersion: 2
-        x: 40
+        x: 48
         y: 0
-        width: 40
-        height: 40
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,113 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c43d861fc89488b70800000000000000
-      internalID: 8901445533192213324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char_move_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd179cbf2a94eaaf0800000000000000
-      internalID: -383287953922100773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char_move_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f5e87e3a458adb80800000000000000
-      internalID: -8369230403592460810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char_move_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef516c3747c7ba1e0800000000000000
-      internalID: -2185516354557831682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char_move_5
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bdb4a828b0a43c40800000000000000
-      internalID: 5491190558487788985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: char_move_6
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7033e132ff287d070800000000000000
-      internalID: 8131111684558172935
+      spriteID: d2aac6c38d78eb5d0800000000000000
+      internalID: -3044846935259436499
       vertices: []
       indices: 
       edges: []

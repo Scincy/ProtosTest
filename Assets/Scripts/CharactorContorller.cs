@@ -19,12 +19,14 @@ public class CharactorContorller : MonoBehaviour, IPunObservable
     protected Dictionary<int, string> idToAction;
 
     private Rigidbody2D charactorBody;
+    private Animator charactorAnim;
 
 	protected private string[] actions  = { "right", "left", "jump" };
 
 	void Start()
 	{
 		charactorBody = GetComponent<Rigidbody2D>();
+        charactorAnim = GetComponent<Animator>();
 
         keyState = new Dictionary<string, bool>();
         lastKeyState = new Dictionary<string, bool>();
@@ -66,30 +68,39 @@ public class CharactorContorller : MonoBehaviour, IPunObservable
 
             if (GetKey("right"))
             {
+                charactorAnim.SetBool("Move",true);
                 charactorBody.AddForce(new Vector2(moveSpeed, 0));
             }
             else if (GetKeyUp("right"))
             {
+                charactorAnim.SetBool("Move", false);
                 charactorBody.velocity = Vector2.zero;
             }
 
             if (GetKey("left"))
             {
+                charactorAnim.SetBool("Move", true);
                 charactorBody.AddForce(new Vector2(-moveSpeed, 0));
             }
             else if (GetKeyUp("left"))
             {
+                charactorAnim.SetBool("Move", false);
                 charactorBody.velocity = Vector2.zero;
             }
 
             if (GetKeyDown("jump") && charactorBody.velocity.y == 0)
             {
+                charactorAnim.SetBool("Move", true);
                 charactorBody.AddForce(new Vector2(0, jumpForce));
             }
             else if (GetKeyUp("jump") && charactorBody.velocity.y > 0)
-            {   // 점프 키에서 손을 때고, 현재 점프중이라면 점프 이동 속도 절반 감소
+            {
+                charactorAnim.SetBool("Move", false);
+                // 점프 키에서 손을 때고, 현재 점프중이라면 점프 이동 속도 절반 감소
                 charactorBody.velocity = charactorBody.velocity * 0.5f;
             }
+
+
 
             foreach (string action in actions)
             {
